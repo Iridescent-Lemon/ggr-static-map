@@ -255,6 +255,8 @@ table {
   border: none;
   background: none;
   outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 .accordion .content {
   opacity: 0;

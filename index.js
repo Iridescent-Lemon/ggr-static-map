@@ -35,7 +35,7 @@ let map = L.map('gogoro-map', {
   zoomControl: false, // Disable zoom control
   // // dragging: false, // Disable dragging
   touchZoom: true, // Disable touch zoom
-  scrollWheelZoom: true, // Disable scroll wheel zoom
+  scrollWheelZoom: false, // Disable scroll wheel zoom
   doubleClickZoom: false, // Disable double click zoom
   boxZoom: false, // Disable box zoom
 });
