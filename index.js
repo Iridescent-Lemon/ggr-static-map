@@ -30,7 +30,7 @@ let map = L.map('gogoro-map', {
   crs: L.CRS.Simple,
   minZoom: 5,
   maxZoom: 7.9,
-  center: [15, 22],
+  center: [22, 22],
   zoom: 0,
   zoomControl: false, // Disable zoom control
   // // dragging: false, // Disable dragging
