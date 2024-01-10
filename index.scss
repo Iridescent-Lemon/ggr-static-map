@@ -150,68 +150,16 @@ table {
 }
 /* End of Reset CSS */
 
-
 // Leaflet attributes
 .leaflet-control-attribution {
   display: none;
 }
 
+// .custom-icon {
+//   transition: transform 0.3s ease-in-out;
+// }
+
 // End of Leaflet attributes
-
-// // Declared Variables
-// $site-marker-width: 4.3%;
-// $charger-marker-width: 3.2%;
-// $marker-position: absolute;
-// $marker-z: 10;
-// // End of Declared Variables
-
-// .site-marker-1 {
-//   width: $site-marker-width;
-//   position: $marker-position;
-//   z-index: $marker-z;
-//   bottom: 43.5%;
-//   right: 32.78%;
-// }
-
-// .site-marker-2 {
-//   width: $site-marker-width;
-//   position: $marker-position;
-//   z-index: $marker-z;
-//   bottom: 39.5%;
-//   right: 24.78%;
-// }
-
-// .site-marker-3 {
-//   width: $site-marker-width;
-//   position: $marker-position;
-//   z-index: $marker-z;
-//   bottom: 17.1%;
-//   right: 40%;
-// }
-
-// .charger-marker-1 {
-//   width: $charger-marker-width;
-//   position: $marker-position;
-//   z-index: $marker-z;
-//   top: 11.75%;
-//   right: 46.8%;
-// }
-
-// .charger-marker-2 {
-//   width: $charger-marker-width;
-//   position: $marker-position;
-//   z-index: $marker-z;
-//   top: 41.666%;
-//   right: 45.09%;
-// }
-
-// .charger-marker-3 {
-//   width: $charger-marker-width;
-//   position: $marker-position;
-//   z-index: $marker-z;
-//   bottom: 31.3%;
-//   right: 44.79%;
-// }
 
 .marker:hover {
   transform: scale(1.2);
@@ -219,41 +167,31 @@ table {
   transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.w-layout-blockcontainer {
-  /* max-width: 940px; */
-  margin: 0 auto;
-
-  /* display: block; */
-}
-
 #gogoro-map {
   width: 100%;
   height: 100%;
   border: none;
-  margin-bottom: 0;
-	margin:0;
+  margin: 0;
   z-index: 2;
-  border: 1px solid violet;
 }
 
-.container {
-  z-index: 1;
-  height: 80vh;
+#container {
+  height: 130vh;
   width: 100%;
   max-width: 1280px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  border: 1px solid red;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
-.div-block-main {
+#main-section {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 130vh;
   overflow: hidden;
-  border: 1px solid greenyellow;
 }
 
 .gogoro-logo {
@@ -266,27 +204,8 @@ table {
   margin-right: 20px;
 }
 
-// .info-container {
-//   position: absolute;
-//   padding: 20px;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   z-index: 2;
-// }
-
-// .below-section {
-//   width: 100%;
-//   justify-content: space-between;
-//   align-items: flex-end;
-//   display: flex;
-//   z-index: 2;
-//   border: 1px solid sandybrown;
-// }
-
 .vision-block {
   width: 400px;
-  border: 1px solid green;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -319,12 +238,12 @@ table {
   }
 }
 
-#accordion {
+.accordion {
   display: flex;
   flex-direction: column;
   justify-content: start;
   gap: 1rem;
-  width: 30%;
+  width: 340px;
   position: absolute;
   margin-top: 20px;
   margin-left: 20px;
@@ -438,8 +357,7 @@ table {
   }
 
   &::-webkit-scrollbar {
-    /* WebKit */
-    display: none;
+    display: none; /* WebKit */
   }
 
   li:before {
@@ -448,8 +366,9 @@ table {
     margin-top: 25px;
     margin-right: 5px;
   }
+}
 
-  /* @media screen and (max-width: 991px) {
+/* @media screen and (max-width: 991px) {
       .w-layout-blockcontainer {
           max-width: 728px;
       }
@@ -461,73 +380,123 @@ table {
       }
   } */
 
-  /* @media screen and (max-width: 991px) {
-      .container {
-          height: 500px;
-      }
-  
-      .image {
-          object-position: 100% 50%;
-          flex: 0 auto;
-      }
-  
-      .info-container {
-          padding: 20px;
-      }
-  
-      .below-section {
-          justify-content: space-between;
-          align-items: flex-end;
-          display: flex;
-      }
-  
-      .vision-block {
-          width: 70%;
-      }
+// @media screen and (max-width: 991px) {
+//     #container {
+//         height: 500px;
+//     }
+
+//     .image {
+//         object-position: 100% 50%;
+//         flex: 0 auto;
+//     }
+
+//     .info-container {
+//         padding: 20px;
+//     }
+
+//     .below-section {
+//         justify-content: space-between;
+//         align-items: flex-end;
+//         display: flex;
+//     }
+
+//     .vision-block {
+//         width: 70%;
+//     }
+// }
+
+// @media screen and (max-width: 767px) {
+//     .image {
+//         object-position: 100% 50%;
+//     }
+
+//     .below-section {
+//         flex: 0 auto;
+//     }
+
+//     .image-3 {
+//         position: absolute;
+//         top: 133px;
+//         right: 200px;
+//     }
+// }
+
+@media screen and (max-width: 768px) {
+  #container {
+    border-radius: 0;
+    overflow: auto;
+    height: 100%;
   }
-  
-  @media screen and (max-width: 767px) {
-      .image {
-          object-position: 100% 50%;
-      }
-  
-      .below-section {
-          flex: 0 auto;
-      }
-  
-      .image-3 {
-          position: absolute;
-          top: 133px;
-          right: 200px;
-      }
+
+  #main-section {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
   }
-  
-  @media screen and (max-width:479px) {
-      .container {
-          flex-direction: row;
-          justify-content: center;
-          align-items: stretch;
-      }
-  
-      .image {
-          width: auto;
-          object-fit: cover;
-          object-position: 78% 50%;
-          flex: 1;
-          align-self: center;
-          position: absolute;
-      }
-  
-      .div-block-main {
-          flex: 1;
-      }
-  
-      .paragraph {
-          font-size: 12px;
-      }
-  
-      .image-3 {
-          right: 38px;
-      }
-  } */
+
+  #gogoro-map {
+    height: 400px;
+    z-index: 4;
+  }
+
+  .accordion {
+    position: static;
+    width: 100%;
+    margin: 0;
+    gap: 0;
+
+    li.accordion-item {
+      border-bottom: 1px solid #e2e2e2;
+      border-radius: 0;
+      filter: none;
+    }
+    
+  }
+
+  .vision-block {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 60px 0;
+    text-align: center;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    p:nth-of-type(1) {
+      max-width: 80%;
+      margin-bottom: 35px;
+    }
+
+    p:nth-of-type(2) {
+      max-width: 80%;
+      margin-bottom: 25px;
+    }
+
+    .app-links {
+      margin: 0 auto;
+    }
+
+    .app-links img {
+      width: 150px;
+    }
+
+    .app-links img:nth-of-type(1) {
+      margin: 0;
+    }
+  }
+
+  .gogoro-logo {
+    display: none;
+  }
+
+
 }
