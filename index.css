@@ -1,4 +1,16 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "GraphikRegular";
+  src: url("./src/font/GraphikRegular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GraphikSemiBold";
+  src: url("./src/font/GraphikSemibold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 html,
 body,
 div,
@@ -106,7 +118,7 @@ section {
 body {
   line-height: 1;
   background-color: rgb(39, 37, 37);
-  font-family: "Open Sans";
+  font-family: "Graphik", "Open Sans", sans-serif;
 }
 
 ol,
@@ -141,9 +153,28 @@ table {
   box-sizing: border-box;
 }
 
+.prevent-select {
+  -webkit-user-select: none; /* Safari */ /* IE 10 and IE 11 */
+  -moz-user-select: none;
+       user-select: none; /* Standard syntax */
+}
+
 /* End of Reset CSS */
 .leaflet-control-attribution {
   display: none;
+}
+
+.mini-popup {
+  width: 130px;
+  height: 90%;
+}
+.mini-popup h1 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0db837;
+}
+.mini-popup p {
+  font-size: 0.7rem;
 }
 
 .marker:hover {
@@ -168,7 +199,6 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 1rem;
   overflow: hidden;
 }
 
@@ -199,6 +229,7 @@ table {
   margin-bottom: 20px;
 }
 .vision-block h1 {
+  font-family: "GraphikSemiBold";
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 20px;
@@ -318,6 +349,7 @@ table {
 .gostation-location li {
   margin: 5px 0;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 .gostation-location li:first-of-type {
   margin-top: 0;
@@ -348,7 +380,6 @@ table {
   } */
 @media screen and (max-width: 768px) {
   #container {
-    border-radius: 0;
     overflow: auto;
     height: 100%;
   }
