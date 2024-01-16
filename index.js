@@ -1,28 +1,22 @@
-
 const items = document.querySelectorAll(".accordion li.accordion-item button"),
-  onlineGSList = document.querySelectorAll(".list-1 li"),
-  stoGSList = document.querySelectorAll(".list-2 li");
+  onlineGSList = document.querySelectorAll(".gs-list-1 li"),
+  stoGSList = document.querySelectorAll(".gs-list-2 li");
 
 let onlineGSLocationData = [
-  { lat: -14, lng: 23, title: 'White Plains', address: 'Globe Tower BGC, Taguig' },
-  { lat: -13, lng: 25, title: 'Gogoro Experience Center Greenbelt 4', address: 'Globe Tower BGC, Taguig' },
-  { lat: -8, lng: 28, title: 'The Globe Tower GoStation', address: 'Phoenix Shaw Boulevard' },
-  { lat: -10, lng: 26, title: 'The Globe Tower GoStation', address: 'Gogoro Experience Center Greenbelt 4' },
-  { lat: -14, lng: 28, title: 'The Globe Tower GoStation', address: 'Puregold Makati' },
-  { lat: -21.50, lng: 23.25, title: 'The Globe Tower GoStation', address: 'Puregold Parañaque' },
+  { lat: -16.50, lng: 26.13, title: 'Gogoro Experience Center Greenbelt 4', address: '2nd Floor Greenbelt 4, Makati Avenue, Ayala Center, Makati City' },
+  { lat: -16.42, lng: 29.35, title: 'The Globe Tower BGC Taguig', address: '32nd St. Corner 7th Ave. Bonifacio Global City, Taguig City' },
+  { lat: -22.25, lng: 23.20, title: 'Puregold Parañaque', address: '113 Ninoy Aquino Ave, Sto. Niño, Parañaque City' },
+  { lat: -13.90, lng: 24.85, title: 'Puregold Makati', address: '35 Dr Jose P. Rizal Ave, Makati City' },
+  { lat: -13.75, lng: 30.38, title: 'Phoenix Petroleum Shaw Pasig', address: 'Phoenix Gas Station, Shaw Blvd, San Antonio, Pasig City' },
 ], stoGSLocationData = [
-  { lat: -11, lng: 25, title: 'Ayala GoStation', address: 'Puregold Parañaque' },
-  { lat: -12, lng: 29, title: 'The Globe Tower GoStation', address: 'Gogoro Experience Center Greenbelt 4' },
-  { lat: -6, lng: 30, title: 'Puregold Makati', address: 'Puregold Makati' },
-  { lat: -18, lng: 25, title: 'Phoenix', address: 'Phoenix Shaw Bouleletd' },
-  { lat: -5, lng: 20, title: 'Phoenix', address: 'Globe Tower BGC, Taguig' },
-  { lat: -8, lng: 23, title: 'Phoenix', address: 'Puregold Parañaque' },
-  { lat: -11, lng: 21, title: 'Phoenix', address: 'Gogoro Experience Center Greenbelt 4' },
-  { lat: -9, lng: 19, title: 'Phoenix', address: 'Puregold Makati' },
-  { lat: -17, lng: 26, title: 'Phoenix', address: 'Phoenix Shaw Bouleletd' },
-  { lat: -15, lng: 31, title: 'Phoenix', address: 'Puregold Makati' },
-  { lat: -14, lng: 26, title: 'Phoenix', address: 'Phoenix Shaw Bouleletd' },
-  { lat: -14, lng: 26, title: 'Phoenix', address: 'Phoenix Shaw Bouleletd' },
+  { lat: -4.85, lng: 32.25, title: 'UP Town Center Quezon City', address: 'Coming Soon' },
+  { lat: -10, lng: 31.65, title: 'White Plains Quezon City', address: 'Coming Soon' },
+  { lat: -8.50, lng: 34.25, title: 'Ayala Feliz Pasig', address: 'Coming Soon' },
+  { lat: -18.25, lng: 25.30, title: 'Paseo De Magallanes Makati', address: 'Coming Soon' },
+  { lat: -12.88, lng: 32.50, title: 'Seaoil C5 Northbound', address: 'Coming Soon' },
+  { lat: -14.10, lng: 26.90, title: 'Seaoil EDSA Guadalupe', address: 'Coming Soon' },
+  { lat: -6, lng: 28.25, title: 'Eton Centris', address: 'Coming Soon' },
+  { lat: -16.25, lng: 25.20, title: 'De La Rosa Carpark Makati', address: 'Coming Soon' },
 ];
 
 // -- Powered by LeafletJS --
@@ -77,21 +71,37 @@ let onlineGSMarkerIcon = L.divIcon({
 // Create a marker for each location and bind a popup
 let onlineGSMarkers = onlineGSLocationData.map(function (location) {
   return L.marker([location.lat, location.lng], {
-    icon: onlineGSMarkerIcon,
+    icon: onlineGSMarkerIcon,    
+    zIndexOffset: 2,
     autoPanOnFocus: true
   })
     .addTo(map)
-    .bindPopup(`<div class="popup-card"><h1>${location.title}</h1><p>${location.address}</p></div>`, {
+    .bindPopup(
+      `<div class="popup-card">
+      <h1>GoStation</h1>
+      <h1>${location.title}</h1>
+      <p>${location.address}</p>
+      </div>
+      `, {
       closeButton: false
     });
 }),
   stoGSMarkers = stoGSLocationData.map(function (location) {
     return L.marker([location.lat, location.lng], {
       icon: stoGSMarkerIcon,
+      zIndexOffset: 1,
+      riseOnHover: true,
+      riseOffset: 10,
       autoPanOnFocus: true
     })
       .addTo(map)
-      .bindPopup(`<div class="popup-card"><h1>${location.title}</h1><p>${location.address}</p></div>`, {
+      .bindPopup(
+        `<div class="popup-card">
+        <h1>GoStation</h1>
+        <h1>${location.title}</h1>
+        <p>${location.address}</p>
+        </div>
+        `, {
         closeButton: false
       });
   });

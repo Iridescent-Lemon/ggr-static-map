@@ -8,92 +8,91 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- leafleft order matters here -->
     <link rel="stylesheet" href="./src/leaflet.css" />
     <script src="./src/leaflet.js"></script>
     <link rel="stylesheet" href="./index.css">
+    <script defer src="./index.js"></script>
 </head>
 
 <body>
     <div id="container">
         <div id="main-section">
             <div id="gogoro-map"></div>
-            <ul class="accordion">
-                <li class="accordion-item">
-                    <button id="accordion-button-1" aria-expanded="true">
-                        <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-                            <circle cx="25" cy="25" r="25" fill="#2EF261" />
-                        </svg>
-                        <span class="accordion-title-1">Online GoStations</span>
-                        <svg class="d-arrow" aria-hidden="true" fill="#999" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 100 100" xml:space="preserve" stroke="#999">
-                            <path
-                                d="M78.466 35.559 50.15 63.633 22.078 35.317a2 2 0 0 0-2.84 2.815L48.432 67.58a1.993 1.993 0 0 0 1.727.568c.054.008.106.021.16.022a1.991 1.991 0 0 0 1.515-.576l29.447-29.196a1.999 1.999 0 1 0-2.815-2.839z" />
-                        </svg>
-                    </button>
-                    <div class="content">
-                        <hr>
-                        <p>Currently, there are three live GoStations in Metro Manila. They're located in:</p>
-                        <ul class="gostation-location list-1">
-                            <li class="test1">Globe Tower BGC, Taguig</li>
-                            <li class="test2">Puregold Parañaque</li>
-                            <li class="test3">Gogoro Experience Center Greenbelt 4</li>
-                            <li class="test4">Puregold Makati</li>
-                            <li class="test5">Phoenix Shaw Boulevard</li>
-                            <li>White Plains</li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="accordion-item">
-                    <button id="accordion-button-2" aria-expanded="false">
-                        <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-                            <circle cx="25" cy="25" r="25" fill="#A4A6A9" />
-                        </svg>
-                        <span class="accordion-title-2">Soon-to-Open GoStations</span>
-                        <svg class="d-arrow" fill="#999" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
-                            xml:space="preserve" stroke="#999">
-                            <path
-                                d="M78.466 35.559 50.15 63.633 22.078 35.317a2 2 0 0 0-2.84 2.815L48.432 67.58a1.993 1.993 0 0 0 1.727.568c.054.008.106.021.16.022a1.991 1.991 0 0 0 1.515-.576l29.447-29.196a1.999 1.999 0 1 0-2.815-2.839z" />
-                        </svg>
-                    </button>
-                    <div class="content">
-                        <hr>
-                        <p>Four more GoStations are scheduled to open in:</p>
-                        <ul class="gostation-location list-2">
-                            <li>UP Town Center</li>
-                            <li>White Plains</li>
-                            <li>Ayala Mall Feliz</li>
-                            <li>Paseo De Magallanes</li>
-                            <li>Seaoil C5 Northbound</li>
-                            <li>Seaoil EDSA Guadalupe</li>
-                            <li>Acacia Estate - Taguig City Hall</li>
-                            <li>Eton North Edsa</li>
-                            <li>St.Peter Apostle School</li>
-                            <li>Alabang Town Center</li>
-                            <li>Phoenix Eastwood Quezon City</li>
-                            <li>Department of Energy</li>
-                        </ul>
-                        <p>In addition to this, more builds are underway in Central Business Districts (CBDs) around
-                            Metro Manila.</p>
-                    </div>
-                </li>
-            </ul>
+            <div class="accordion-container">
+                <ul class="accordion">
+                    <li class="accordion-item">
+                        <button id="accordion-button-1" aria-expanded="true">
+                            <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                                <circle cx="25" cy="25" r="25" fill="#2EF261" />
+                            </svg>
+                            <span class="accordion-title-1">Online GoStations</span>
+                            <svg class="d-arrow" aria-hidden="true" fill="#999" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 100 100" xml:space="preserve" stroke="#999">
+                                <path
+                                    d="M78.466 35.559 50.15 63.633 22.078 35.317a2 2 0 0 0-2.84 2.815L48.432 67.58a1.993 1.993 0 0 0 1.727.568c.054.008.106.021.16.022a1.991 1.991 0 0 0 1.515-.576l29.447-29.196a1.999 1.999 0 1 0-2.815-2.839z" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content gs-content-1">
+                            <hr>
+                            <p>Currently, there are three live GoStations in Metro Manila. They are located in:</p>
+                            <ul class="gostation-location gs-list-1">
+                                <li>Gogoro Experience Center Greenbelt 4</li>
+                                <li>The Globe Tower BGC Taguig</li>
+                                <li>Puregold Parañaque</li>
+                                <li>Puregold Makati</li>
+                                <li>Phoenix Petroleum Shaw Pasig</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="accordion-item">
+                        <button id="accordion-button-2" aria-expanded="false">
+                            <svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                                <circle cx="25" cy="25" r="25" fill="#A4A6A9" />
+                            </svg>
+                            <span class="accordion-title-2">Soon-to-Open GoStations</span>
+                            <svg class="d-arrow" fill="#999" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                xml:space="preserve" stroke="#999">
+                                <path
+                                    d="M78.466 35.559 50.15 63.633 22.078 35.317a2 2 0 0 0-2.84 2.815L48.432 67.58a1.993 1.993 0 0 0 1.727.568c.054.008.106.021.16.022a1.991 1.991 0 0 0 1.515-.576l29.447-29.196a1.999 1.999 0 1 0-2.815-2.839z" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content gs-content-2">
+                            <hr>
+                            <p>Four more GoStations are scheduled to open in:</p>
+                            <ul class="gostation-location gs-list-2">
+                                <li>UP Town Center Quezon City</li>
+                                <li>White Plains Quezon City</li>
+                                <li>Ayala Feliz Pasig</li>
+                                <li>Paseo De Magallanes Makati</li>
+                                <li>Seaoil C5 Northbound</li>
+                                <li>Seaoil EDSA Guadalupe</li>
+                                <li>Eton Centris</li>
+                                <li>De La Rosa Carpark Makati</li>
+                            </ul>
+                            <p>In addition to this, more builds are underway in Central Business Districts (CBDs) around
+                                Metro Manila.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
             <div class="vision-block prevent-select">
                 <h1>Our Vision</h1>
-                <p class="paragraph">Our infrastructure team is continously scouting for prime locations around Metro
+                <p>Our infrastructure team is continously scouting for prime locations around Metro
                     Manila as well as the provinces. Eventually, we will roll out GoStations in key cities in the
                     Philippines.</p>
-                <p class="paragraph">You can check out the nearest GoStations within your area using the Gogoro App.</p>
+                <p>You can check out the nearest GoStations within your area using the Gogoro App.</p>
                 <div class="app-links">
-                    <a href="#"><img src="./src/images/cta-apple-store.png" alt="App Store"></a>
-                    <a href="#"><img src="./src/images/cta-google-play.png" alt="Google Play"></a>
+                    <a href="https://apps.apple.com/ph/app/gogoro/id927757129"><img src="./src/images/cta-apple-store.png" alt="App Store"></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.gogoro.smartclient/"><img src="./src/images/cta-google-play.png" alt="Google Play"></a>
                 </div>
             </div>
             <div class="gogoro-tag-black">
-                <img class="gogoro-logo" src="./src/images/gogoro-logo.png">
+                <img class="gogoro-logo" src="./src/images/gogoro-logo.png" alt="Gogoro">
             </div>
         </div>
     </div>
-    <script src="./index.js"></script>
 </body>
 
 </html>
