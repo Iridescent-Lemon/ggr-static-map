@@ -2,6 +2,7 @@ const items = document.querySelectorAll(".accordion li.accordion-item button"),
   onlineGSList = document.querySelectorAll(".gs-list-1 li"),
   stoGSList = document.querySelectorAll(".gs-list-2 li");
 
+// Marker Data
 let onlineGSLocationData = [
   { lat: -16.50, lng: 26.13, title: 'Gogoro Experience Center Greenbelt 4', address: '2nd Floor Greenbelt 4, Makati Avenue, Ayala Center, Makati City' },
   { lat: -16.42, lng: 29.35, title: 'The Globe Tower BGC Taguig', address: '32nd St. Corner 7th Ave. Bonifacio Global City, Taguig City' },
@@ -71,9 +72,8 @@ let onlineGSMarkerIcon = L.divIcon({
 // Create a marker for each location and bind a popup
 let onlineGSMarkers = onlineGSLocationData.map(function (location) {
   return L.marker([location.lat, location.lng], {
-    icon: onlineGSMarkerIcon,    
+    icon: onlineGSMarkerIcon,
     zIndexOffset: 2,
-    autoPanOnFocus: true
   })
     .addTo(map)
     .bindPopup(
@@ -92,7 +92,6 @@ let onlineGSMarkers = onlineGSLocationData.map(function (location) {
       zIndexOffset: 1,
       riseOnHover: true,
       riseOffset: 10,
-      autoPanOnFocus: true
     })
       .addTo(map)
       .bindPopup(
@@ -115,17 +114,11 @@ if (onlineGSMarkers[0]) {
 // Listeners
 items.forEach(item => item.addEventListener('click', toggleAccordion));
 
-// Add mouseover event listener to each li
+//Mouseover listener to each li
 onlineGSList.forEach(function (li, index) {
   let marker = onlineGSMarkers[index];
-  let markerLatLng = marker.getLatLng();
 
   li.addEventListener('mouseover', function () {
-    // Maximum zoom level that would still allow the marker to be visible
-    let zoom = map.getBoundsZoom(bounds.extend(markerLatLng), false);
-
-    // Set the view to the marker's location, using the calculated zoom level
-    map.setView(markerLatLng, zoom, { animate: true });
     marker.openPopup();
   });
 
@@ -134,23 +127,21 @@ onlineGSList.forEach(function (li, index) {
 
 stoGSList.forEach(function (li, index) {
   let marker = stoGSMarkers[index];
-  let markerLatLng = marker.getLatLng();
 
   li.addEventListener('mouseover', function () {
-    let zoom = map.getBoundsZoom(bounds.extend(markerLatLng), false);
-    map.setView(markerLatLng, zoom, { animate: true });
     marker.openPopup();
   });
 
   addFocusClassToOpenPopup(marker);
 });
 
-// Add 'popupopen' event listener to the map
+// PopupOpen listener to the map
 map.on('popupopen', function (e) {
   let zoomValue = map.getZoom();
   let popUpCoordinates = map.project(e.popup._latlng);
 
   popUpCoordinates.y -= e.popup._container.clientHeight / zoomValue;
+  
   map.setView(map.unproject(popUpCoordinates), zoomValue, { animate: true });
 
   addFocusClassToOpenPopup(e.popup._source);
@@ -177,7 +168,6 @@ function toggleAccordion() {
   if (itemToggle == 'false') {
     this.setAttribute('aria-expanded', 'true');
   }
-
 }
 
 //Add 'marker-focus' class to marker with open popup
