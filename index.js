@@ -9,10 +9,10 @@ let onlineGSLocationData = [
   { lat: -13.90, lng: 24.85, title: 'Puregold Makati', address: '35 Dr Jose P. Rizal Ave, Makati City' },
   { lat: -13.75, lng: 30.38, title: 'Phoenix Petroleum Shaw Pasig', address: 'Phoenix Gas Station, Shaw Blvd, San Antonio, Pasig City' },
 ], stoGSLocationData = [
-  { lat: -4.85, lng: 32.25, title: 'UP Town Center Quezon City', address: 'Coming Soon' },
   { lat: -10, lng: 31.65, title: 'White Plains Quezon City', address: 'Coming Soon' },
   { lat: -8.50, lng: 34.25, title: 'Ayala Feliz Pasig', address: 'Coming Soon' },
   { lat: -18.25, lng: 25.30, title: 'Paseo De Magallanes Makati', address: 'Coming Soon' },
+  { lat: -4.85, lng: 32.25, title: 'UP Town Center Quezon City', address: 'Coming Soon' },
   { lat: -12.88, lng: 32.50, title: 'Seaoil C5 Northbound', address: 'Coming Soon' },
   { lat: -14.10, lng: 26.90, title: 'Seaoil EDSA Guadalupe', address: 'Coming Soon' },
   { lat: -6, lng: 28.25, title: 'Eton Centris', address: 'Coming Soon' },
