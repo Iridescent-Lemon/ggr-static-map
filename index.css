@@ -256,7 +256,7 @@ table {
   will-change: opacity, max-height;
 }
 .accordion li.accordion-item button[aria-expanded=true] + .accordion-content.gs-content-1 {
-  max-height: 140px;
+  max-height: 155px;
 }
 .accordion li.accordion-item button[aria-expanded=true] + .accordion-content.gs-content-2 {
   max-height: 300px;
