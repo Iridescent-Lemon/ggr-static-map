@@ -4,12 +4,28 @@
   src: url("./src/font/GraphikRegular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 @font-face {
   font-family: "GraphikSemiBold";
   src: url("./src/font/GraphikSemibold.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 /*Start of Reset CSS*/
 html,
