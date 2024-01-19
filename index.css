@@ -9,6 +9,7 @@
   speak: none;
   line-height: 1;
   text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,6 +23,7 @@
   speak: none;
   line-height: 1;
   text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale;
 }
